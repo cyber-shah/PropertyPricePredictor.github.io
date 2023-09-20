@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <!-- <title>Pranchal and Harshal's Housing Price Analyzer</title> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Data App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+    .map-container {
+        width: 50%;
+        height: 100%;
+    }
+
+    .data-container {
+        width: 50%;
+        height: 100%;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    </style>
 </head>
 <body>
-    <h1>GitHub Pages JavaScript Test</h1>
-    <p id="demo">Click the button to change this text.</p>
-    <button id="myButton">Click Me</button>
-
-    <script src = "index.js">
-    </script>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28688.94705769442!2d-80.22990407623971!3d25.761679954581996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQwJzEyLjciTiA4MMKwMzEnMTkuMSJX!5e0!3m2!1sen!2sus!4v1566937957208!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0">
+        </iframe>
+    </div>
+    <div class="data-container">
+        <!-- Data about the location goes here -->
+        <h2>Miami, Florida</h2>
+        <p>Latitude: 25.7617</p>
+        <p>Longitude: -80.1918</p>
+        <p>Additional information about Miami...</p>
+    </div>
 </body>
 </html>
