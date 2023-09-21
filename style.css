@@ -16,7 +16,6 @@ body .left-half {
 body .map-container {
     width: 100%;
     height: 100%;
-    justify-content: right;
     align-items: center;
 }
 
