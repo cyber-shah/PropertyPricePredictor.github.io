@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HousePriceAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = "left-half">
+        <div class = "Title">
+            <h1>HousePriceAI</h1>
+            <h2>Miami, Florida</h2>
+            <h2>Welcome from the backend! {{name}} I know you are from {{nationality}} </h2>
+        </div>
+        <div class="map-container">
+            <iframe
+                style="filter: invert(90%)"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28688.94705769442!2d-80.22990407623971!3d25.761679954581996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQwJzEyLjciTiA4MMKwMzEnMTkuMSJX!5e0!3m2!1sen!2sus!4v1566937957208!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                style="border:0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0">
+            </iframe>
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="intro">
+            <h1>What does AI <br> <span class="highlight">think</span> 🧠<br> about this property?</h1>
+        </div>
+
+        <div class = "input">
+            <p>Let's find out!</p>
+            <input type="text" placeholder="Enter address...">
+        </div>
+        
+        <div class="data-items">
+            <div class="data-item">
+                Container 1
+            </div>
+            <div class="data-item">
+                Container 2
+            </div>
+            <div class="data-item">
+                Container 3
+            </div>
+            <div class="data-item">
+                Container 4
+            </div>
+            <div class="data-item">
+                Container 5
+            </div>
+            <div class="data-item">
+                Container 6
+            </div>
+            <div class="data-item">
+                Container 7
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% comment %} 
+dynamic word counter from the backend 
+this has a form method which will modify the url everytime the user submits the form
+we can then use the url to get the text from the form
+
+gets saved with a key called 'text' in the url, because of the name attribute in the textarea tag
+
+
+action is where we want all this data to be sent at
+so the url will go to "root/counter?text=whatever+the+user+typed+in+the+textarea"
+eventually, what this means is send this data to the counter function in views.py
+{% endcomment %}
+
+{% comment %} 
+<h1> Input text below </h1>
+<form method="GET" action="counter">
+    <textarea name = "text" rows = "25" cols = "80"></textarea>
+    <input type = "submit" />
+    <p>There are {{count}} words in the text above.</p>
+</form>
+</html> 
+{% endcomment %}
+
+
+{% comment %} 
+so there's either get method or post method.
+get method works with urls 
+where as post method is more secure and works with forms 
+
+so now everything that was put into it wont be in the url
+{% endcomment %}
+<h1> Input text below </h1>
+<form method="POST" action="counter">
+    {% comment %} add csrf toke {% endcomment %}
+    {% csrf_token %}
+    <textarea name = "text" rows = "25" cols = "80"></textarea>
+    <input type = "submit" />
+    <p>There are {{count}} words in the text above.</p>
+</form>
+</html>
