@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HousePriceAI</title>
-    <link rel="stylesheet" href="style.css">
+    {% comment %} add static tag for django to see {% endcomment %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
@@ -12,7 +14,7 @@
         <div class = "Title">
             <h1>HousePriceAI</h1>
             <h2>Miami, Florida</h2>
-            <h2>Welcome from the backend! {{name}} I know you are from {{nationality}} </h2>
+            {% comment %} <h2>Welcome from the backend! {{name}} I know you are from {{nationality}} </h2> {% endcomment %}
         </div>
         <div class="map-container">
             <iframe
@@ -96,12 +98,14 @@ where as post method is more secure and works with forms
 
 so now everything that was put into it wont be in the url
 {% endcomment %}
+
+{% comment %} 
 <h1> Input text below </h1>
 <form method="POST" action="counter">
-    {% comment %} add csrf toke {% endcomment %}
     {% csrf_token %}
     <textarea name = "text" rows = "25" cols = "80"></textarea>
     <input type = "submit" />
     <p>There are {{count}} words in the text above.</p>
 </form>
-</html>
+</html> 
+{% endcomment %}
