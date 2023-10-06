@@ -5,9 +5,12 @@ Three step process to create a new page:
 2. URL configuration (that maps a URL to a view)
 3. Create a view (a function that returns a rendered HTML page)
 """
-from django.urls import path, include,
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('login/', views.login_user, name='login'),
+    path('logout/', views.logout_user, name='logout'),    
 ]
+ 
